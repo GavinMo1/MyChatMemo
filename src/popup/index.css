@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans:
+    'IBM Plex Sans', 'Segoe UI Variable', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei UI',
+    sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', 'SFMono-Regular', monospace;
+
+  --c-brand: #0f766e;
+  --c-brand-light: #5eead4;
+  --c-brand-dark: #164e63;
+  --c-accent: #f59e0b;
+  --c-surface: #f4f8fb;
+  --c-card: rgba(255, 255, 255, 0.88);
+  --c-border: #d6e1e8;
+  --c-text: #17212b;
+  --c-text-2: #51606d;
+  --c-text-3: #80909d;
+  --c-shadow: 0 24px 48px rgba(15, 23, 42, 0.12);
+}
+
+html,
+body,
+#root {
+  min-width: 320px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(circle at top left, rgba(15, 118, 110, 0.14), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(245, 158, 11, 0.12), transparent 26%),
+    linear-gradient(180deg, #f7fbfd 0%, #eef4f8 100%);
+  color: var(--c-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}

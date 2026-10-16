@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+.env.*
+*.log
+*.tmp
+coverage/
+.vite/
+release/
+
+# 本机 DOM 采样产物；保留可复用的探针脚本
+scripts/probes/*.json

@@ -1,0 +1,72 @@
+{
+  "manifest_version": 3,
+  "name": "MyChatMemo",
+  "version": "1.2.0",
+  "description": "AI 对话保存助手 - 支持 Kimi / 豆包 / Gemini / ChatGPT",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "https://kimi.moonshot.cn/*",
+    "https://kimi.com/*",
+    "https://www.kimi.com/*",
+    "https://www.doubao.com/*",
+    "https://doubao.com/*",
+    "https://gemini.google.com/*",
+    "https://chatgpt.com/*",
+    "https://chat.openai.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background/index.ts",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://kimi.moonshot.cn/*",
+        "https://kimi.com/*",
+        "https://www.kimi.com/*",
+        "https://www.doubao.com/*",
+        "https://doubao.com/*",
+        "https://gemini.google.com/*",
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*"
+      ],
+      "js": ["src/content/index.tsx"],
+      "run_at": "document_idle"
+    }
+  ],
+  "side_panel": {
+    "default_path": "src/sidepanel/index.html"
+  },
+  "action": {
+    "default_popup": "src/popup/index.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["src/sidepanel/index.html"],
+      "matches": [
+        "https://kimi.moonshot.cn/*",
+        "https://kimi.com/*",
+        "https://www.kimi.com/*",
+        "https://www.doubao.com/*",
+        "https://doubao.com/*",
+        "https://gemini.google.com/*",
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*"
+      ]
+    }
+  ]
+}

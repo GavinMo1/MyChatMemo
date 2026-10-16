@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans:
+    'IBM Plex Sans', 'Segoe UI Variable', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei UI',
+    sans-serif;
+  --font-mono: 'JetBrains Mono', 'Cascadia Code', 'SFMono-Regular', monospace;
+
+  --c-brand: #0f766e;
+  --c-brand-light: #5eead4;
+  --c-brand-soft: #d8f3ee;
+  --c-brand-dark: #164e63;
+  --c-accent: #f59e0b;
+  --c-surface: #f5f8fb;
+  --c-surface-2: #eef3f7;
+  --c-panel: rgba(248, 250, 252, 0.92);
+  --c-card: #ffffff;
+  --c-border: #d7e0e8;
+  --c-border-strong: #b8c5d1;
+  --c-text: #18212b;
+  --c-text-2: #4b5c6c;
+  --c-text-3: #7d8b98;
+  --c-danger: #dc2626;
+  --c-success: #0f9d7a;
+  --c-shadow: 0 24px 48px rgba(15, 23, 42, 0.08);
+  --c-shadow-soft: 0 16px 32px rgba(15, 23, 42, 0.06);
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(circle at top left, rgba(15, 118, 110, 0.12), transparent 28%),
+    radial-gradient(circle at top right, rgba(245, 158, 11, 0.12), transparent 24%),
+    linear-gradient(180deg, #f8fbfd 0%, #eef4f8 100%);
+  color: var(--c-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(125, 139, 152, 0.45);
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(75, 92, 108, 0.62);
+  background-clip: padding-box;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(0.75);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.22s ease-out;
+}
+.animate-slideUp {
+  animation: slideUp 0.28s ease-out;
+}
+.animate-pulse-dot {
+  animation: pulse-dot 1.4s ease-in-out infinite;
+}
+.animate-spin-slow {
+  animation: spin 1s linear infinite;
+}
